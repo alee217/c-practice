@@ -22,7 +22,7 @@ int main(int argc, char** argv) {
     ComplexSet* set = AllocSet(c_arr, 2);
     assert(set != NULL);
     FreeSet(set);
-    printf("success");
+    printf("success\n");
     return 0;
 }
 

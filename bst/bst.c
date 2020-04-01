@@ -3,9 +3,9 @@
 #include <assert.h>
 #include "bst.h"
 
-Node *lookup_node(Node *root, int key);
+static Node *lookup_node(Node *root, int key);
 
-Node *insert_node(Node *root, Node *in);
+static Node *insert_node(Node *root, Node *in);
 
 Node *insert(Node *root, int key, void *element) {
     Node *n = (Node *) malloc(sizeof(Node));
@@ -21,7 +21,7 @@ Node *insert(Node *root, int key, void *element) {
     return insert_node(root, n);
 }
 
-Node *insert_node(Node *root, Node *in) {
+static Node *insert_node(Node *root, Node *in) {
     if (root == NULL) {
         return in;
     }
@@ -42,7 +42,7 @@ void *lookup(Node *root, int key) {
     return res->element;
 }
 
-Node *lookup_node(Node *root, int key) {
+static Node *lookup_node(Node *root, int key) {
     if (root != NULL) {
         if (key == root->key) {
 	        return root;
